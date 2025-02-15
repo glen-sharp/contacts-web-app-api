@@ -24,10 +24,13 @@ Query param:
 ## Deploying API locally
 
 ```bash
+# Install required python libraries
 pip install -r requirements.txt
 
+# Migrate DB queries to a local SQLite file
 python contacts_web_app/manage.py migrate
 
+# Run API server locally
 python contacts_web_app/manage.py runserver
 ```
 
