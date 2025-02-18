@@ -2,7 +2,7 @@
 max-line-length = 120
 
 per-file-ignores =
-    ./contacts_web_app/contacts_api/migrations/*:Q000
+    ./contacts_api/migrations/*:Q000
 
 inline-quotes = double
 
