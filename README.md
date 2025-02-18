@@ -28,10 +28,10 @@ Query param:
 pip install -r requirements.txt
 
 # Migrate DB queries to a local SQLite file
-python contacts_web_app/manage.py migrate
+python manage.py migrate
 
 # Run API server locally
-python contacts_web_app/manage.py runserver
+python manage.py runserver
 ```
 
 ## Deploying API via Docker Image
