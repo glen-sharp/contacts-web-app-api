@@ -41,3 +41,9 @@ docker build . -t contacts-api
 
 docker run -p 8000:10 contacts-api:latest
 ```
+
+## Static Analysis
+
+```bash
+flake8
+```

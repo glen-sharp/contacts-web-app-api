@@ -3,3 +3,4 @@ djangorestframework==3.12.4
 django-cors-headers
 pytz==2021.1
 jsonschema==4.23.0
+flake8==7.0.0

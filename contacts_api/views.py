@@ -2,18 +2,20 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from jsonschema import validate, ValidationError
 from rest_framework import status
-
+import logging
 
 from .models import Contact
 from .serializers import ContactSerializer
 from .payload_schema import schema
+
+logger = logging.getLogger("root")
 
 
 @api_view(["GET"])
 def contact_details(request):
     contacts = Contact.objects.all()
     serializer = ContactSerializer(contacts, many=True)
-    return Response(serializer.data)
+    return Response({"contact_array": serializer.data})
 
 
 @api_view(["POST"])

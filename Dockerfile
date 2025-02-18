@@ -9,4 +9,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Expose port 10 for the development server to listen on
 EXPOSE 10
 # Run the development server
-CMD ["python", "contacts_web_app/manage.py", "runserver", "0.0.0.0:10"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:10"]
