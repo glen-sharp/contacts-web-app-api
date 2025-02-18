@@ -26,13 +26,13 @@ def add_contact(request):
             validate(instance=request.data, schema=schema)
         except ValidationError:
             return Response(
-                {"msg": "Bad request"},
+                {"message": "Bad request"},
                 status=status.HTTP_400_BAD_REQUEST,
             )
         serializer.save()
-        return Response({"msg": "Success"})
+        return Response({"message": "Contact added"})
     return Response(
-        {"msg": "Bad request"},
+        {"message": "Bad request"},
         status=status.HTTP_400_BAD_REQUEST,
     )
 
@@ -40,5 +40,10 @@ def add_contact(request):
 @api_view(["DELETE"])
 def delete_contact(request):
     id = request.query_params.get("id")
+    if not id:
+        return Response(
+            {"message": "Bad request"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
     ContactSerializer.delete(id)
-    return Response({"msg": "Success"})
+    return Response({"message": f"id={id} successfully deleted"})

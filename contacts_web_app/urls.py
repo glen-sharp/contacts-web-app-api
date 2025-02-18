@@ -16,15 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from contacts_api.views import (
-    contact_details,
-    add_contact,
-    delete_contact,
-)
+from contacts_api import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("contact_details", contact_details),
-    path("add_contact", add_contact),
-    path("delete_contact", delete_contact),
+    path("contact_details/", views.contact_details, name="contact_details"),
+    path("add_contact/", views.add_contact),
+    path("delete_contact/", views.delete_contact),
 ]
