@@ -47,3 +47,9 @@ docker run -p 8000:10 contacts-api:latest
 ```bash
 flake8
 ```
+
+## Unit Tests
+
+```bash
+python manage.py test contacts_api --verbosity=2
+```
